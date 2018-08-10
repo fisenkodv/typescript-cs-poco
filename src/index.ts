@@ -43,7 +43,7 @@ function safeRegex(regex, input, options?) {
         let timeout = options && options.timeout;
         if(!timeout) timeout = 30000;
         script.runInContext(context, { 
-            timeout: timeout.toString()
+            timeout: timeout
         });
     } catch(e){
         throw new Error(`Regular expression timeout for pattern '${regex}' and data '${input}', with ${sandbox.results.length} results gathered so far.\n\nInner error: ${e}`);
